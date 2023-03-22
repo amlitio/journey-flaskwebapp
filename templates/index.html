@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Journal App</title>
+  </head>
+  <body>
+    <h1>My Journal Entries</h1>
+    <ul>
+      {% for entry in entries %}
+        <li><h2>{{ entry.title }}</h2><p>{{ entry.content }}</p></li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('create_entry') }}">Create a new entry</a>
+  </body>
+</html>
