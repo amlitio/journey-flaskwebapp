@@ -4,6 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///journal.db'
 db = SQLAlchemy(app)
+from app import db
+db.create_all()
+
 
 class JournalEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
